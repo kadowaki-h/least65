@@ -1,0 +1,59 @@
+least65
+
+a fortran90 program of non-linear least squares
+
+Levenberg–Marquardt algorithm
+
+https://en.wikipedia.org/wiki/Non-linear_least_squares
+https://en.wikipedia.org/wiki/Levenberg–Marquardt_algorithm
+https://en.wikipedia.org/wiki/LAPACK
+
+mod_least65.f90 : fortran90 source code
+ using LAPACK subroutines
+    DGEQP3
+    DORMQR
+    DTRTRS
+    DSYEVR
+
+test_mod_ls65.f90 : test program
+tsls65.dat : test input data
+tsls65.out : test output
+
+
+#####
+HOW TO USE
+ read comment lines in mod_least65.f90
+
+#####
+
+compile and link: 
+ gfortran -Wall -O -o test_mod_ls65.ex mod_least65.f90 test_mod_ls65.f90 -llapack -lblas
+ ifort -mkl -O -o test_mod_ls65.ex mod_least65.f90 test_mod_ls65.f90
+
+run: 
+ time ./test_mod_ls65.ex < tsls65.dat > tsls65.out
+
+######
+MAC OSX 10.9.5
+
+gfortran -Wall -O -o test_mod_ls65.ex mod_least65.f90 test_mod_ls65.f90 -llapack -lblas
+time ./test_mod_ls65.ex < tsls65.dat > tsls65.out
+
+real	0m1.826s
+user	0m1.830s
+sys	0m0.039s
+
+#####
+ubuntu14.04
+
+gfortran -Wall -O -o test_mod_ls65.ex mod_least65.f90 test_mod_ls65.f90 -llapack -lblas
+time ./test_mod_ls65.ex < tsls65.dat > tsls65.out
+
+real	0m1.455s
+user	0m2.568s
+sys	0m5.960s
+
+#####
+
+
+
