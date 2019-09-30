@@ -2,7 +2,7 @@ least65
 
 a fortran90 program of nonlinear least squares
 
-Levenberg–Marquardt algorithm
+Levenberg-Marquardt algorithm-
 
 https://en.wikipedia.org/wiki/Non-linear_least_squares
 https://en.wikipedia.org/wiki/Levenberg–Marquardt_algorithm
