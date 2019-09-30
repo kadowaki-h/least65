@@ -1,6 +1,6 @@
 least65
 
-a fortran90 program of non-linear least squares
+a fortran90 program of nonlinear least squares
 
 Levenberg–Marquardt algorithm
 
